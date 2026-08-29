@@ -1,0 +1,8 @@
+config.env
+last.json
+relay.log
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
