@@ -1,6 +1,6 @@
 # Discord ↔ Grok Bot drop-in kit
 
-A small Unix kit: a Discord bot listener, an instant **Got it.** pickup ack, a webhook wake into a Grok Bot routine, outbound replies as the bot, and a keep-alive so the listener comes back after crashes or computer restarts.
+A small Unix kit: a Discord bot listener, an instant :robot: reaction on the owner's message, a webhook wake into a Grok Bot routine, outbound replies as the bot, and a keep-alive so the listener comes back after crashes or computer restarts.
 
 It wakes only when the **owner** addresses the bot: an @mention of the bot user, a role whose name equals `BOT_NAME`, or a line starting with `BOT_NAME` / `@BOT_NAME`. Not every message.
 
@@ -21,9 +21,9 @@ Python 3, a Discord account, and Grok Bot.
 
 1. Create a Discord app and bot at [discord.com/developers/applications](https://discord.com/developers/applications). Copy the bot token. Under Bot, enable the **Message Content Intent** (privileged).
 
-2. Invite the bot. Use the OAuth2 URL generator, scope `bot`, permissions **View Channel**, **Send Messages**, and **Read Message History** (bitmask `68608`):
+2. Invite the bot. Use the OAuth2 URL generator, scope `bot`, permissions **View Channel**, **Send Messages**, **Read Message History**, and **Add Reactions** (bitmask `68672`):
 
-   `https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=68608&integration_type=0&scope=bot`
+   `https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=68672&integration_type=0&scope=bot`
 
 3. Optional: create a Discord role named exactly `BOT_NAME` so an @role mention also wakes the bot.
 
@@ -47,7 +47,7 @@ Python 3, a Discord account, and Grok Bot.
 
    Confirm `relay.log` contains `ready`.
 
-8. Test: the owner @mentions the bot in the configured channel. Discord should get an instant **Got it.** and the Grok Bot routine should fire.
+8. Test: the owner @mentions the bot in the configured channel. Discord should get an instant :robot: reaction and the Grok Bot routine should fire.
 
 9. Outbound reply from the kit directory:
 
