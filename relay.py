@@ -102,8 +102,8 @@ async def on_message(message: discord.Message):
         log(f"skip no-mention id={message.id}")
         return
     try:
-        await message.reply("Got it.", mention_author=False)
-        log(f"acked {message.id}")
+        await message.add_reaction("\N{ROBOT FACE}")
+        log(f"acked {message.id} react=robot")
     except Exception as e:
         log(f"ack failed {type(e).__name__}")
     payload = {
